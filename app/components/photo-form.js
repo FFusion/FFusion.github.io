@@ -29,7 +29,7 @@ var PhotoData = (function () {
 var PhotoForm = (function () {
     function PhotoForm(photoService) {
         this.photoService = photoService;
-        this.model = new PhotoData('Красная площадь, Москва', '', '', '', '', '0', '', '10', '500');
+        this.model = new PhotoData('Красная площадь, Москва', '', '', '', '', '1', '', '10', '500');
         this.activeForm = true;
     }
     PhotoForm.prototype.onSubmit = function () {

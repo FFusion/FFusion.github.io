@@ -37,7 +37,7 @@ export class PhotoForm {
     }
 
 
-    model = new PhotoData('Красная площадь, Москва','','','','','0','','10','500');
+    model = new PhotoData('Красная площадь, Москва','','','','','1','','10','500');
 
     onSubmit() {
         this.activeForm = false;
