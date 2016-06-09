@@ -1,0 +1,103 @@
+body {
+  background: url('../image/1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.gallery-item {
+  width: 150px;
+  height: 150px;
+  border: 1px solid white;
+  margin: 5px;
+}
+.gallery-item img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.text-danger {
+  font-size: 24px;
+}
+.title-count {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+body {
+  margin: 2em;
+}
+.title-form {
+  color: white;
+  margin-bottom: 30px;
+}
+input.ui-inputfield,
+select.ui-inputfield,
+textarea.ui-inputfield {
+  border: 1px solid #ccc;
+  font-size: 18px;
+  padding: 0 15px;
+  width: 100%;
+}
+input.ui-inputfield:focus,
+select.ui-inputfield:focus,
+textarea.ui-inputfield:focus {
+  box-shadow: 0 0 0 2px #accae3;
+}
+input.ui-inputfield,
+select.ui-inputfield {
+  height: 51px;
+  line-height: 51px;
+}
+textarea.ui-inputfield {
+  height: 102px;
+  line-height: 102px;
+  overflow-y: hidden;
+}
+.data-form label {
+  font: 500 13px/1.42 'Roboto', 'Helvetica Neue', Helvetica, Arial;
+  margin-bottom: 5px;
+  color: white;
+}
+.data-form dl {
+  position: relative;
+  margin-bottom: 29px;
+}
+.data-form dl dt {
+  position: absolute;
+  left: 15px;
+  top: 9px;
+  font-size: 10px;
+  line-height: 10px;
+  z-index: 4;
+  font-weight: 200;
+  display: none;
+}
+.data-form dl.lbl-up dt {
+  display: block;
+}
+.data-form dl.lbl-up input.ui-inputfield,
+.data-form dl.lbl-up select.ui-inputfield,
+.data-form dl.lbl-up textarea.ui-inputfield {
+  padding-top: 15px;
+}
+.data-form dl.lbl-up textarea.ui-inputfield {
+  line-height: 51px;
+}
+.data-form .field-error {
+  padding: 6px 0 0;
+}
+.data-form .field-error span {
+  color: #D0021B;
+  display: inline-block;
+  font-size: 13px;
+  margin: 0 10px 0 19px;
+}

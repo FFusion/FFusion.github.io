@@ -1,0 +1,97 @@
+<div class="container" *ngIf="activeForm">
+    <h1 class="text-center title-form">Форма поиска фотографии Вконтакте</h1>
+    <form (ngSubmit)="onSubmit()" #photoForm="ngForm">
+        <div class="form-group data-form">
+            <label for="q">Введите адрес места</label>
+            <dl [class.lbl-up]="model.q != null && model.q != ''">
+                <dt>Адрес</dt>
+                <input type="text" class="form-control ui-inputfield"
+                       [(ngModel)]="model.q"
+                       ngControl="q"
+                       placeholder="Адрес">
+            </dl>
+        </div>
+        <div class="form-group data-form">
+            <label for="lat">Географическая широта отметки, заданная в градусах (от -90 до 90). </label>
+            <dl [class.lbl-up]="model.lat != null && model.lat != ''">
+                <dt>Географическая широта</dt>
+                <input type="text"  class="form-control ui-inputfield"
+                       [(ngModel)]="model.lat"
+                       placeholder="Географическая широта"
+                >
+            </dl>
+        </div>
+        <div class="form-group data-form">
+            <label for="long">Географическая долгота  отметки, заданная в градусах (от -180 до 180). </label>
+            <dl [class.lbl-up]="model.long != null && model.long != ''">
+                <dt>Географическая долгота</dt>
+                <input type="text"  class="form-control ui-inputfield"
+                       [(ngModel)]="model.long"
+                       placeholder="Географическая долгота"
+                       >
+            </dl>
+        </div>
+        <div class="form-group data-form">
+            <label for="start_time">Выберите время, не раньше которого должны были быть загружены найденные фотографии. </label>
+            <datetime [datepicker]="{clearBtn: true, autoclose:true}" [timepicker]="false" [(ngModel)]="model.start_time"></datetime>
+        </div>
+        <div class="form-group data-form">
+            <label for="end_time">Выберите время, не позже которого должны были быть загружены найденные фотографии.  </label>
+            <datetime [datepicker]="{clearBtn: true, autoclose:true}" [timepicker]="false" [(ngModel)]="model.end_time"></datetime>
+        </div>
+        <div class="form-group data-form">
+            <label for="sort">Сортировка</label>
+            <span class="text-danger">*</span>
+            <dl [class.lbl-up]="model.sort">
+                <dt>Сортировка</dt>
+                <select class="form-control ui-inputfield"  required
+                        [(ngModel)]="model.sort"
+                        ngControl="sort"
+                >
+                    <option [value]="0">по дате добавления</option>
+                    <option [value]="1">по количеству «Мне нравится»</option>
+                </select>
+            </dl>
+        </div>
+        <div class="form-group data-form">
+            <label for="offset">Смещение относительно первой найденной фотографии для выборки определенного подмножества</label>
+            <dl [class.lbl-up]="model.offset != null && model.offset != ''">
+                <dt>Смещение</dt>
+                <input type="text"  class="form-control ui-inputfield"
+                       [(ngModel)]="model.offset"
+                       placeholder="Смещение"
+                >
+            </dl>
+        </div>
+        <div class="form-group data-form">
+            <label for="count">Количество фотографий (максимум 1000)  </label>
+            <span class="text-danger">*</span>
+            <dl [class.lbl-up]="model.count != null && model.count != ''">
+                <dt>Количество</dt>
+                <input type="text"  class="form-control ui-inputfield" required
+                       [(ngModel)]="model.count"
+                       placeholder="Количество"
+                >
+            </dl>
+        </div>
+        <div class="form-group data-form">
+            <label for="radius">Радиус поиска в метрах (по умолчанию 5000) </label>
+            <dl [class.lbl-up]="model.radius != null && model.radius != ''">
+                <dt>Радиус</dt>
+                <input type="text"  class="form-control ui-inputfield"
+                       [(ngModel)]="model.radius "
+                       placeholder="Радиус"
+                >
+            </dl>
+        </div>
+
+        <div class="form-group pull-right">
+            <button type="submit" class="btn btn-primary">Найти</button>
+        </div>
+    </form>
+</div>
+<div class="container" *ngIf="!activeForm">
+    <button class="btn btn-primary" (click)="back()">Назад к форме</button>
+    <div class="row text-center title-count">Всего фотографий по выбранным параметрам: {{ counts }}</div>
+    <light-gallery [photos]="photos"></light-gallery>
+</div>

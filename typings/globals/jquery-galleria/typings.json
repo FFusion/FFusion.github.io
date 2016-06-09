@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/jquery-galleria/jquery-galleria.d.ts",
+    "raw": "github:DefinitelyTyped/DefinitelyTyped/jquery-galleria/jquery-galleria.d.ts",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/jquery-galleria/jquery-galleria.d.ts"
+  }
+}
